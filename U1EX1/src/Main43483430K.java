@@ -6,5 +6,6 @@ public class Main43483430K {
 
         AccesFileReader43483430K.Reader();
         AccesFileWriter43483430K.Writer();
+        File43483430K.RevokePermissions();
     }
 }

@@ -6,8 +6,13 @@ import java.io.IOException;
 //import java.util.Set;
 
 public class File43483430K {
-    public void RevokePermissions() throws IOException {
-        File file = new File("CopiaFile.txt");
+    public static void RevokePermissions() throws IOException {
+        File file = new File("U1EX1.txt");
         file.setReadable(false, false);
+        if (file.setReadable(false, false)){
+            System.out.println("Los permisos se han revocado exitosamente.");
+        }else {
+            System.out.println("No se han podido revocar los permisos.");
+        }
     }
 }

@@ -4,23 +4,17 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class AccesFileReader43483430K {
-    public static void Reader(){
+    public static void Reader(File archivo) {
         try {
-            File originalFile = new File("U1EX1.txt");
-            try {
-                FileReader fileReader = new FileReader(originalFile);
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    System.out.println(line);
-                }
-                bufferedReader.close();
-            } catch (IOException e) {
-                System.out.println("No tienes permitido leer este archivo");
+            FileReader lectorarchivo = new FileReader(archivo);
+            BufferedReader bufferedReader = new BufferedReader(lectorarchivo);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            bufferedReader.close();
+        } catch (IOException e) {
+            System.out.println("No tienes permitido leer este archivo.");
         }
     }
 }

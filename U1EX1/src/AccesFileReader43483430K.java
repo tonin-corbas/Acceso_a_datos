@@ -7,12 +7,12 @@ public class AccesFileReader43483430K {
     public static void Reader(File archivo) {
         try {
             FileReader lectorarchivo = new FileReader(archivo);
-            BufferedReader bufferedReader = new BufferedReader(lectorarchivo);
+            BufferedReader almacenReader = new BufferedReader(lectorarchivo);
             String line;
-            while ((line = bufferedReader.readLine()) != null) {
+            while ((line = almacenReader.readLine()) != null) {
                 System.out.println(line);
             }
-            bufferedReader.close();
+            almacenReader.close();
         } catch (IOException e) {
             System.out.println("No tienes permitido leer este archivo.");
         }

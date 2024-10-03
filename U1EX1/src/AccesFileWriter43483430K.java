@@ -8,9 +8,9 @@ public class AccesFileWriter43483430K {
             return;
         }
 
-        // Proceder con la copia si el archivo es escribible
+        // Proceder con la copia si hay permisos de escritura en el archivo
         try {
-            RandomAccessFile raf = new RandomAccessFile(archivo, "r");  // Abrir en modo lectura
+            RandomAccessFile raf = new RandomAccessFile(archivo, "r");
             String destino = "CopiaFile.txt";
             File archivocopia = new File(destino);
             FileOutputStream copyFos = new FileOutputStream(archivocopia);
@@ -20,13 +20,11 @@ public class AccesFileWriter43483430K {
                 copyFos.write(line.getBytes());
                 copyFos.write("\n".getBytes());
             }
-
             raf.close();
             copyFos.close();
             System.out.println("Archivo copiado exitosamente.");
         } catch (IOException e) {
             System.out.println("Error al copiar el archivo.");
-            e.printStackTrace();
         }
     }
 }

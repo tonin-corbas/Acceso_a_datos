@@ -14,16 +14,15 @@ public class FileInputStream43483430K {
             try (FileInputStream fis = new FileInputStream(archivo)) {
                 System.out.println("Leyendo el archivo JPG...");
 
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-                while ((bytesRead = fis.read(buffer)) != -1) {
-                    System.out.println("Leídos " + bytesRead + " bytes.");
+                byte[] almacen = new byte[1024];
+                int bytesLeidos;
+                while ((bytesLeidos = fis.read(almacen)) != -1) {
+                    System.out.println("Leídos " + bytesLeidos + " bytes.");
                 }
 
                 System.out.println("Lectura del archivo JPG completada.");
             } catch (IOException e) {
                 System.out.println("Error al leer el archivo JPG.");
-                e.printStackTrace();
             }
         }
     }

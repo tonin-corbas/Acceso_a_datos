@@ -15,16 +15,14 @@ public class FileOutputStream43483430K {
         try (FileInputStream fis = new FileInputStream(archivo);
              FileOutputStream fos = new FileOutputStream("CopiaImagen.jpg")) {
 
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = fis.read(buffer)) != -1) {
-                fos.write(buffer, 0, bytesRead);
+            byte[] almacen = new byte[1024];
+            int bytesLeidos;
+            while ((bytesLeidos = fis.read(almacen)) != -1) {
+                fos.write(almacen, 0, bytesLeidos);
             }
-
             System.out.println("Archivo JPG copiado exitosamente.");
         } catch (IOException e) {
             System.out.println("Error al copiar el archivo JPG.");
-            e.printStackTrace();
         }
     }
 }

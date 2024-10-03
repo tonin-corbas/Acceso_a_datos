@@ -1,34 +1,38 @@
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Main43483430K {
     public static void main(String[] args) throws IOException {
         // Crear el archivo para trabajar
-        File archivo = new File("C:\\Users\\tikum\\IdeaProjects\\Acceso_a_datos\\U1EX1.txt");
+        File archivo = new File("U1EX1.txt");
 
-        // Verificar si el archivo existe y es legible
-        if (archivo.isFile()) {
-            System.out.println("El archivo es un archivo de texto.");
-            AccesFileReader43483430K.Reader(archivo);
-            AccesFileWriter43483430K.Writer(archivo);
-        } else {
-            System.out.println("El archivo no es un archivo de texto se asumirá que es una imagen jpg.");
-            FileInputStream43483430K.InputStream(archivo);
-            FileOutputStream43483430K.OutputStream(archivo);
-        }
+        // Verificar si es un archivo binario o de texto
+            if (File43483430K.isBinaryFile(archivo)) {
+                System.out.println("El archivo es un archivo binario (JPG u otro tipo).");
+                FileInputStream43483430K.InputStream(archivo);
+                FileOutputStream43483430K.OutputStream(archivo);
+            } else {
+                System.out.println("El archivo es un archivo de texto.");
+                AccesFileReader43483430K.Reader(archivo);
+                AccesFileWriter43483430K.Writer(archivo);
+            }
 
-        // Revocar permisos de escritura y lectura del archivo original
+        // Revocar permisos de escritura del archivo
         File43483430K quitadordepermisos = new File43483430K();
         quitadordepermisos.RevokePermissions(archivo);
 
-        System.out.println("Intentando volver a copiar el archivo");
+        System.out.println("Intentando volver a escribir en el archivo");
 
-        // Intentar escribir nuevamente, debe fallar si no tiene permisos
+        //segunda ronda de escritura, esta vez sin permisos
         try {
-            AccesFileWriter43483430K.Writer(archivo);
+            if (File43483430K.isBinaryFile(archivo)) {
+                FileOutputStream43483430K.OutputStream(archivo);
+            } else {
+                AccesFileWriter43483430K.Writer(archivo);
+            }
         } catch (Exception e) {
-            System.out.println("No se puede copiar el archivo debido a la falta de permisos.");
+            System.out.println("No se puede escribir en el archivo debido a la falta de permisos.");
         }
+        archivo.setWritable(true);
     }
 }

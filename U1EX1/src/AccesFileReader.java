@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class AccesFileReader43483430K {
+public class AccesFileReader {
     public static void Reader(File archivo) {
         try {
             FileReader lectorarchivo = new FileReader(archivo);

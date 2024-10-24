@@ -1,9 +1,8 @@
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class File43483430K {
-    public static boolean isBinaryFile(File archivo) throws IOException {
+public class Fileclass {
+    public static boolean isBinaryFile(java.io.File archivo) throws IOException {
         // Leer los primeros 1024 bytes del archivo
         try (FileInputStream fis = new FileInputStream(archivo)) {
             byte[] almacen = new byte[1024];
@@ -23,7 +22,7 @@ public class File43483430K {
     }
 
     // Revocar permisos de escritura del archivo original
-    public void RevokePermissions(File archivo) throws IOException {
+    public void RevokePermissions(java.io.File archivo) throws IOException {
         try {
             // Revocar permisos de escritura
             archivo.setWritable(false);

@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class AccesFileWriter43483430K {
+public class AccesFileWriter {
     public static void Writer(File archivo) throws IOException {
         // Verificar si el archivo tiene permisos de escritura antes de intentar escribir
         if (!archivo.canWrite()) {
@@ -12,7 +12,7 @@ public class AccesFileWriter43483430K {
         try {
             RandomAccessFile raf = new RandomAccessFile(archivo, "r");
             String destino = "CopiaFile.txt";
-            File archivocopia = new File(destino);
+            Fileclass archivocopia = new Fileclass(destino);
             FileOutputStream copyFos = new FileOutputStream(archivocopia);
             String line;
 

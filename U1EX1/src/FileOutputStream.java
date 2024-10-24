@@ -1,9 +1,8 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class FileOutputStream43483430K {
+public class FileOutputStream {
     public static void OutputStream(File archivo) throws IOException {
         // Verificar si el archivo tiene permisos de escritura antes de intentar escribir
         if (!archivo.canWrite()) {
@@ -13,7 +12,7 @@ public class FileOutputStream43483430K {
 
         // Proceder con la copia del archivo JPG
         try (FileInputStream fis = new FileInputStream(archivo);
-             FileOutputStream fos = new FileOutputStream("CopiaImagen.jpg")) {
+             java.io.FileOutputStream fos = new java.io.FileOutputStream("CopiaImagen.jpg")) {
 
             byte[] almacen = new byte[1024];
             int bytesLeidos;

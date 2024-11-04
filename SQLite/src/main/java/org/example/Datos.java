@@ -26,19 +26,4 @@ public class Datos {
             System.out.println("Error al cerrar la conexión: " + e.getMessage());
         }
     }
-
-    private static void createTableIfNotExists() {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:empresa.db");
-             Statement stmt = conn.createStatement()) {
-            String sql = "CREATE TABLE IF NOT EXISTS empleats (" +
-                    "id INTEGER PRIMARY KEY, " +
-                    "nom VARCHAR(100), " +
-                    "edat INTEGER, " +
-                    "correu VARCHAR(100))";
-            stmt.execute(sql);
-            System.out.println("La taula 'empleats' ha estat verificada o creada.");
-        } catch (SQLException e) {
-            System.out.println("Error al crear la taula: " + e.getMessage());
-        }
-    }
 }

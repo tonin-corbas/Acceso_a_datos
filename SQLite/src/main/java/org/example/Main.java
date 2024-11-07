@@ -12,15 +12,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
+        System.out.println("-------------------------------------------------------------------------------------");
         while (!exit) {
             System.out.println("\nMenú Principal:");
-            System.out.println("1. Introduir dades d'empleat a la base de dades.");
-            System.out.println("2. Llegir dades de la base de dades i imprimir-les.");
-            System.out.println("3. Sortir del programa.");
-            System.out.print("Seleccioneu una opció: ");
+            System.out.println("1. Introducir los datos del empleado a la base de datos.");
+            System.out.println("2. Leer los datos en la base de datos.");
+            System.out.println("3. Cerrar el programa.");
+            System.out.print("Selecciona una opción: ");
 
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -33,25 +34,27 @@ public class Main {
                     exit = true;
                     break;
                 default:
-                    System.out.println("Opció invàlida. Si us plau, trieu una opció vàlida.");
+                    System.out.println("Opción invalida. por favor selecciona una opción válida.");
             }
+            System.out.println("-------------------------------------------------------------------------------------");
         }
+
         scanner.close();
     }
 
     private static void insertarEmpleado(Scanner scanner) {
-        System.out.print("Introdueix l'ID de l'empleat: ");
+        System.out.print("Introduce el id del empleado: ");
         int id = scanner.nextInt();
         scanner.nextLine();  // Consume newline
 
-        System.out.print("Introdueix el nom de l'empleat: ");
+        System.out.print("Introduce el nombre del empleado: ");
         String nombre = scanner.nextLine();
 
-        System.out.print("Introdueix l'edat de l'empleat: ");
+        System.out.print("Introduce la edad del empleado: ");
         int edad = scanner.nextInt();
         scanner.nextLine();  // Consume newline
 
-        System.out.print("Introdueix el correu de l'empleat: ");
+        System.out.print("Introduce el correo del empleado: ");
         String correo = scanner.nextLine();
 
         try (Connection conn = Datos.conectar();
@@ -75,9 +78,9 @@ public class Main {
             System.out.println("Dades dels empleats:");
             while (rs.next()) {
                 System.out.println("ID: " + rs.getInt("id") +
-                        ", Nom: " + rs.getString("nombre") +
-                        ", Edat: " + rs.getInt("edad") +
-                        ", Correu: " + rs.getString("correo"));
+                        ", Nombre: " + rs.getString("nombre") +
+                        ", Edad: " + rs.getInt("edad") +
+                        ", Correo: " + rs.getString("correo"));
             }
         } catch (SQLException e) {
             System.out.println("Error durant la lectura de dades: " + e.getMessage());

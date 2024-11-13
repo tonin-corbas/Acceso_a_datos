@@ -7,22 +7,26 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import static org.example.Datos.conectar;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-
+        //Bucle principal del proyecto
         System.out.println("-------------------------------------------------------------------------------------");
         while (!exit) {
-            System.out.println("\nMenú Principal:");
+            System.out.println("Menú Principal:");
             System.out.println("1. Introducir los datos del empleado a la base de datos.");
             System.out.println("2. Leer los datos en la base de datos.");
-            System.out.println("3. Cerrar el programa.");
+            System.out.println("3. Eliminar un empleado de la base de datos.");
+            System.out.println("4. Cerrar el programa.");
             System.out.print("Selecciona una opción: ");
 
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
+//            Switch que se encarga de gesionar las opciones seleccionadas por el user
             switch (opcion) {
                 case 1:
                     insertarEmpleado(scanner);
@@ -31,6 +35,9 @@ public class Main {
                     leerEmpleados();
                     break;
                 case 3:
+                    eliminarEmpleado(scanner);
+                    break;
+                case 4:
                     exit = true;
                     break;
                 default:
@@ -42,36 +49,42 @@ public class Main {
         scanner.close();
     }
 
+    //     Constructor que se utiliza para insertar empleados dentro de la BBDD
     private static void insertarEmpleado(Scanner scanner) {
         System.out.print("Introduce el id del empleado: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine(); // Limpia el salto de linea pendiente
 
         System.out.print("Introduce el nombre del empleado: ");
         String nombre = scanner.nextLine();
 
         System.out.print("Introduce la edad del empleado: ");
         int edad = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine(); // Limpia el salto de linea pendiente3
 
         System.out.print("Introduce el correo del empleado: ");
         String correo = scanner.nextLine();
 
-        try (Connection conn = Datos.conectar();
+        // try catch que sirve para insertar los datos dentro ded la propia BBDD
+        try (Connection conn = conectar();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO empleados (id, nombre, edad, correo) VALUES (?, ?, ?, ?)")) {
             pstmt.setInt(1, id);
             pstmt.setString(2, nombre);
             pstmt.setInt(3, edad);
             pstmt.setString(4, correo);
             pstmt.executeUpdate();
-            System.out.println("Empleat introduït correctament.");
-        } catch (SQLException e) {
-            System.out.println("Error durant la inserció de dades: " + e.getMessage());
+            System.out.println("Empleado introducido correctamente.");
+        }
+//        El catch muestra los errores posibles en caso de que no se haya podido insetar los datos
+        catch (SQLException e) {
+            System.out.println("Error durante la inserción de datos: " + e.getMessage());
         }
     }
 
+    //    Constructor utilizado para leer la base de datos
     private static void leerEmpleados() {
-        try (Connection conn = Datos.conectar();
+//        Comprueba que haya conexión con la BBDD y en caso contrario muestre el error en pantalla
+        try (Connection conn = conectar();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM empleados")) {
 
@@ -83,7 +96,14 @@ public class Main {
                         ", Correo: " + rs.getString("correo"));
             }
         } catch (SQLException e) {
-            System.out.println("Error durant la lectura de dades: " + e.getMessage());
+            System.out.println("Error durante la lectura de datos: " + e.getMessage());
         }
+    }
+
+    private static void eliminarEmpleado(Scanner scanner) {
+        System.out.print("Introduce el ID del empleado que deseas eliminar: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        Datos.eliminarEmpleado(id);
     }
 }

@@ -49,7 +49,7 @@ public class Main {
         scanner.close();
     }
 
-    //     Constructor que se utiliza para insertar empleados dentro de la BBDD
+    //     Método que se utiliza para insertar empleados dentro de la BBDD
     private static void insertarEmpleado(Scanner scanner) {
         System.out.print("Introduce el id del empleado: ");
         int id = scanner.nextInt();
@@ -65,7 +65,7 @@ public class Main {
         System.out.print("Introduce el correo del empleado: ");
         String correo = scanner.nextLine();
 
-        // try catch que sirve para insertar los datos dentro ded la propia BBDD
+        // try-catch que sirve para insertar los datos dentro de la propia BBDD
         try (Connection conn = conectar();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO empleados (id, nombre, edad, correo) VALUES (?, ?, ?, ?)")) {
             pstmt.setInt(1, id);
@@ -75,20 +75,21 @@ public class Main {
             pstmt.executeUpdate();
             System.out.println("Empleado introducido correctamente.");
         }
-//        El catch muestra los errores posibles en caso de que no se haya podido insetar los datos
+//        El catch muestra los errores posibles en caso de que no se haya podido insertar los datos
         catch (SQLException e) {
             System.out.println("Error durante la inserción de datos: " + e.getMessage());
         }
     }
 
-    //    Constructor utilizado para leer la base de datos
+    //    Método utilizado para leer la base de datos
     private static void leerEmpleados() {
 //        Comprueba que haya conexión con la BBDD y en caso contrario muestre el error en pantalla
         try (Connection conn = conectar();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM empleados")) {
 
-            System.out.println("Dades dels empleats:");
+            System.out.println("Datos de los empleados:");
+            // Bucle principal para pintar todos los datos de la BBDD
             while (rs.next()) {
                 System.out.println("ID: " + rs.getInt("id") +
                         ", Nombre: " + rs.getString("nombre") +
@@ -100,6 +101,7 @@ public class Main {
         }
     }
 
+//    Método usado para eliminar empleados llamando al método en la clase Datos
     private static void eliminarEmpleado(Scanner scanner) {
         System.out.print("Introduce el ID del empleado que deseas eliminar: ");
         int id = scanner.nextInt();

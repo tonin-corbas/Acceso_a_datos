@@ -6,7 +6,7 @@ import java.sql.*;
 public class Datos {
     private static final String DB_URL = "jdbc:sqlite:SQLite/src/main/resources/empresa.db";
 
-//  Constructor que hace la conexión
+//  Método que hace la conexión
     public static Connection conectar() {
         try {
             return DriverManager.getConnection(DB_URL);
@@ -16,6 +16,7 @@ public class Datos {
         }
     }
 
+    // Método usado para poder eliminar usuarios de elección de la base de datos
     public static void eliminarEmpleado(int id) {
         String sql = "DELETE FROM empleados WHERE id = ?";
         try (Connection conn = conectar();

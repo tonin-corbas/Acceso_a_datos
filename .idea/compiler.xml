@@ -9,6 +9,7 @@
         <module name="ADU1EX02C" />
         <module name="AccesoAdatos" />
         <module name="ADU2EX01JAKC" />
+        <module name="ADU3EX01JAKC" />
         <module name="SQLite" />
       </profile>
     </annotationProcessing>

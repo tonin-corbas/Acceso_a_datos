@@ -45,11 +45,9 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
+        return "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }
 

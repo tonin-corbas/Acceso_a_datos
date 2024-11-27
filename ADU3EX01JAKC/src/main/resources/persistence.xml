@@ -1,5 +1,5 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="objectdb:db/persones.odb">
+    <persistence-unit name="C:\Users\Toñin\IdeaProjects\Acceso_a_datos\ADU3EX01JAKC\db\personas.odb">
         <properties>
             <property name="javax.persistence.jdbc.user" value=""/>
             <property name="javax.persistence.jdbc.password" value=""/>

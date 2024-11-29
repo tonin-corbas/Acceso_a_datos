@@ -1,27 +1,28 @@
-# Acceso a datos Act 3 Unidad 2
+# Acceso a Datos Act 1 Unidad 3
 
-# Ecosistema de desarrollo
+## Ecosistema de desarrollo
 
-El IDE utilizado es IntelIJ, Windows 11 pro, jdk 23,proyecto hecho en maven y sus librerias correspondiantes de jdbc.
+El IDE utilizado es **IntelliJ IDEA**, ejecutado en **Windows 11 Pro** con **JDK 17** (u otra versión compatible). El proyecto está configurado como un proyecto **Maven**, con las dependencias necesarias para trabajar con **ObjectDB** como motor de base de datos.
 
-# Como ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
-se debe colocar el path absoluto de la base de datos para el correcto funcionamiento del proyecto en la variable llamada **DB_URL** ubicado en la clase **Datos** y además si se está haciendo las pruebas en Intel IJ se debe colocar el archivo de la base de datos en la carpeta llamada resources, ubicado en **src/main/resources**.
+1. **Configuración de la base de datos:**
+    - No es necesario configurar manualmente un archivo de base de datos. ObjectDB creará automáticamente el archivo `personas.odb` en la ruta definida dentro del proyecto al realizar una operación de persistencia.
+    - Verifica que la carpeta donde se almacenará la base de datos (por ejemplo, `db`) exista o se cree automáticamente en el directorio del proyecto.
 
-# Explicación del proyecto
+2. **Ejecución:**
+    - Importa el proyecto en IntelliJ IDEA.
+    - Asegúrate de que el archivo `objectdb.jar` esté configurado correctamente en el classpath del proyecto.
+    - Ejecuta la clase `Main.java` desde el IDE para iniciar el programa interactivo.
 
-Este es un proyecto hecho en Java que utiliza Maven y una base de datos SQLite para gestionar información de empleados de una empresa.
+3. **Dependencias Maven:**
+    - El archivo `persistence.xml` contiene la configuración necesaria para trabajar con JPA y ObjectDB.
 
-**Estructura del proyeto**
+## Explicación del proyecto
 
-**Main.java:** Archivo principal que inicia la aplicación y gestiona la interacción con el usuario
+Este es un proyecto desarrollado en Java que utiliza **ObjectDB** como motor de base de datos para gestionar información de personas. El objetivo principal del proyecto es realizar operaciones básicas de mantenimiento sobre una entidad `Persona` a través de un menú interactivo.
 
-**Datos.java:** Clase para gestionar la conexión con la base de datos y las operaciones de eliminación.
+### **Estructura del proyecto**
 
-**empresa.db:** Archivo de base de datos SQLite que contiene la información de los empleados.
-
-# Funcionalidades
-
-1. Agregar empleados a la base de datos: Permite ingresar los datos de un nuevo empleado en la base de datos.
-2. Leer empleados en la BBDD: Pinta por pantalla todos los empleados almacenados en la base de datos.
-3. Eliminar empleados: Permite eliminar un empleado de la base de datos usando el id del empleado como identificador principal para poder eliminarlos, **Solo se puede elimminar un usuario a la vez**.
+- **Main.java:** Es el archivo principal que inicia la aplicación y gestiona la interacción con el usuario mediante un menú.
+- **Persona.java:** Clase que representa la entidad `Persona` con atributos como `nombre`, `edad` y `email`. Está anotada como una entidad JPA para s

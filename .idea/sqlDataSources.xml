@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="d9093e32-dfdf-4c5f-8f4f-60186ee956b3" name="ADU4EX01JAKCBBDD.db Mapping">
+      <data-sources db="d4653b50-5d40-4deb-89d8-d98456f30060" ddl="f3157ad2-0fed-4671-9402-b5d8cebd7293" />
+      <scope>
+        <node kind="database" negative="1" />
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="f3157ad2-0fed-4671-9402-b5d8cebd7293" />
+          <option name="name" value="ADU4EX01JAKCBBDD.db (DDL)" />
+          <option name="dbmsName" value="SQLITE" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/ADU4EX01JAKC/src/main/resources" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

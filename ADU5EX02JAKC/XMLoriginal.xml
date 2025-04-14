@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+    <libro>
+        <titulo>El Quijote</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <genero>Novela</genero>
+        <precio>10.99</precio>
+    </libro>
+    <libro>
+        <titulo>Cien Años de Soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <genero>Realismo Mágico</genero>
+        <precio>12.99</precio>
+    </libro>
+    <libro>
+        <titulo>Cien Años de Soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <genero>Realismo Mágico</genero>
+        <precio>1</precio>
+    </libro>
+</catalogo>

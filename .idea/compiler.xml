@@ -6,13 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ADU4EX02JAKC" />
+        <module name="ADU3EX01JAKC" />
+        <module name="ADU4EX01JAKCv2" />
+        <module name="FrankyJAKC" />
+        <module name="SQLite" />
+        <module name="ADU6EX01JAKC" />
         <module name="ADU1EX02C" />
-        <module name="ADU4EX01JAKC" />
         <module name="AccesoAdatos" />
         <module name="ADU2EX01JAKC" />
-        <module name="ADU3EX01JAKC" />
-        <module name="SQLite" />
+        <module name="ADU5EX02JAKC" />
+        <module name="ADU5EX03JAKC" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ADU4EX01JAKC" target="23" />
+      <module name="Franky_JAKC" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ADU6EX01JAKC" options="-parameters" />
+      <module name="FrankyJAKC" options="-parameters" />
+      <module name="Franky_JAKC" options="-parameters" />
+    </option>
   </component>
 </project>

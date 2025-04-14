@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ADU1EX02A/ADU1EX02A.iml" filepath="$PROJECT_DIR$/ADU1EX02A/ADU1EX02A.iml" />
       <module fileurl="file://$PROJECT_DIR$/ADU1EX02B/ADU1EX02B.iml" filepath="$PROJECT_DIR$/ADU1EX02B/ADU1EX02B.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ADU4EX01JAKC/ADU4EX01JAKC.iml" filepath="$PROJECT_DIR$/ADU4EX01JAKC/ADU4EX01JAKC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ADU4EX01JAKCv2.iml" filepath="$PROJECT_DIR$/ADU4EX01JAKCv2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ADU4EX02JAKC.iml" filepath="$PROJECT_DIR$/ADU4EX02JAKC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Acceso_a_datos.iml" filepath="$PROJECT_DIR$/.idea/Acceso_a_datos.iml" />
       <module fileurl="file://$PROJECT_DIR$/U1EX1/U1EX1.iml" filepath="$PROJECT_DIR$/U1EX1/U1EX1.iml" />
       <module fileurl="file://$PROJECT_DIR$/pruebasqlite/pruebasqlite.iml" filepath="$PROJECT_DIR$/pruebasqlite/pruebasqlite.iml" />

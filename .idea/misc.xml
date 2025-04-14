@@ -8,7 +8,18 @@
         <option value="$PROJECT_DIR$/SQLite/pom.xml" />
         <option value="$PROJECT_DIR$/ADU3EX01JAKC/pom.xml" />
         <option value="$PROJECT_DIR$/ADU4EX01JAKC/pom.xml" />
+        <option value="$PROJECT_DIR$/ADU4EX01JAKCv2/pom.xml" />
+        <option value="$PROJECT_DIR$/ADU4EX02JAKC/pom.xml" />
+        <option value="$PROJECT_DIR$/ADU5EX02JAKC/pom.xml" />
+        <option value="$PROJECT_DIR$/ADU5EX03JAKC/pom.xml" />
+        <option value="$PROJECT_DIR$/ADU6EX01JAKC/pom.xml" />
+        <option value="$PROJECT_DIR$/Franky JAKC/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ADU4EX01JAKC/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">

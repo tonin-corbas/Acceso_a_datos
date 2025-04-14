@@ -8,21 +8,4 @@
       </scope>
     </mapping>
   </component>
-  <component name="SqlDataSourceStorage">
-    <option name="dataSources">
-      <list>
-        <State>
-          <option name="id" value="f3157ad2-0fed-4671-9402-b5d8cebd7293" />
-          <option name="name" value="ADU4EX01JAKCBBDD.db (DDL)" />
-          <option name="dbmsName" value="SQLITE" />
-          <option name="urls">
-            <array>
-              <option value="file://$PROJECT_DIR$/ADU4EX01JAKC/src/main/resources" />
-            </array>
-          </option>
-          <option name="outLayout" value="File per object by schema.groovy" />
-        </State>
-      </list>
-    </option>
-  </component>
 </project>
